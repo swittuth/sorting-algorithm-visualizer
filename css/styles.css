@@ -1,0 +1,20 @@
+canvas {
+    display: block;
+}
+
+p {
+    text-align: center;
+}
+
+#visual-container {
+    position: absolute;
+    border: 1px solid black;
+    height: 100%;
+    width: 100%;
+}
+
+#visualizer {
+    position: relative;
+    margin: 0 auto;
+    border: 2px solid red;
+}

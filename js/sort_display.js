@@ -9,9 +9,9 @@ class Sort_Visualizer_Board {
         this.height = visual_console.height;
         this.width = visual_console.width;
         this.num_array = [];
-        this.num_numbers = 5;
+        this.num_numbers = 20;
         this.default_size = 20;
-        this.default_spacing = 2;
+        this.default_spacing = 4;
     }
 
     initiate_random_array(){
@@ -27,10 +27,11 @@ class Sort_Visualizer_Board {
         let offset_per_block = this.default_size + this.default_spacing;
         let middle_index = Math.floor(this.num_array.length / 2);
         let initial_position = (this.width / 2) - middle_index * offset_per_block;
+        visual_context.fillStyle = "lightblue";
         for (let i = 0; i < this.num_array.length; i++){
             visual_context.fillRect(initial_position, visual_console.height, this.default_size, -this.num_array[i]);
+            visual_context.strokeRect(initial_position, visual_console.height, this.default_size, -this.num_array[i]);
             initial_position += offset_per_block;
-            console.log(initial_position);
         }
     }
 }
@@ -38,5 +39,3 @@ class Sort_Visualizer_Board {
 const sort_visualizer = new Sort_Visualizer_Board();
 sort_visualizer.initiate_random_array();
 sort_visualizer.display_numbers();
-
-console.log(sort_visualizer.num_array)
